@@ -1,71 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento PIX</title>
+    <title>Pagamento via PIX</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin-top: 50px;
-            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
         }
         .container {
-            background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 500px;
-            margin: auto;
-        }
-        h1 {
-            color: #333;
-        }
-        .pix-key {
-            font-size: 16px;
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
-            word-wrap: break-word;
         }
         .copy-button {
-            margin-top: 10px;
-            padding: 10px;
             background-color: #4CAF50;
             color: white;
+            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
         }
         .copy-button:hover {
             background-color: #45a049;
         }
+        .pix-key {
+            font-family: "Courier New", monospace;
+            word-wrap: break-word;
+            margin-bottom: 20px;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .security-info {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #FF5722;
+            font-weight: bold;
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Pagamento via PIX</h1>
-        <p>Por favor, copie a chave PIX abaixo e faça o pagamento:</p>
-        
-        <div class="pix-key" id="pixKey">99991337386</div>
-        
-        <button class="copy-button" onclick="copyPixKey()">Copiar Chave PIX</button>
-        
-        <p>Após o pagamento, envie o comprovante para confirmação.</p>
-    </div>
 
-    <script>
-        function copyPixKey() {
-            var copyText = document.getElementById("pixKey");
-            var range = document.createRange();
-            range.selectNode(copyText);
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
-            document.execCommand("copy");
-            alert("Chave PIX copiada: " + copyText.textContent);
-        }
-    </script>
-</body>
-</html>
+    <div class="container">
+        <!-- Logo -->
+        <img src="https://i.postimg.cc/3rzgmchc/Logo-Shopping-Online-Laranja.png" alt="Logo do Seu Negócio" class="logo">
+        
+        <!-- Título -->
+        <h2>Pagamento via PIX</h2>
+        
+        <!-- Instruções para copiar a chave -->
+        <p>Para realizar o pagamento, copie a chave PIX abaixo e envie para o seu app bancário:</p>
+
+        <!-- Chave PIX -->
+        <div clas
+
