@@ -21,10 +21,6 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        .logo {
-            width: 180px;
-            margin-bottom: 20px;
-        }
         .header {
             font-size: 24px;
             font-weight: bold;
@@ -73,9 +69,6 @@
 <body>
 
     <div class="container">
-        <!-- Logo -->
-        <img src="https://i.postimg.cc/3rzgmchc/Logo-Shopping-Online-Laranja.png" alt="Logo do Seu Negócio" class="logo">
-        
         <!-- Título -->
         <div class="header">Pagamento via PIX</div>
         
@@ -99,4 +92,21 @@
 
         <!-- Informações de segurança -->
         <div class="security-info">
-            Se o 
+            Se o seu pedido não cair em até 5 minutos, entre em contato e devolvemos o seu valor!
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            var pixKey = document.getElementById('pixKey');
+            var range = document.createRange();
+            range.selectNode(pixKey);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            alert('Chave PIX copiada para a área de transferência!');
+        }
+    </script>
+
+</body>
+</html>
