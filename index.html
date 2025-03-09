@@ -10,40 +10,51 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
         .container {
             padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 40px auto;
         }
         .copy-button {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 30px;
             border: none;
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
+            font-size: 18px;
+            margin-top: 20px;
+            border-radius: 5px;
         }
         .copy-button:hover {
             background-color: #45a049;
         }
         .pix-key {
             font-family: "Courier New", monospace;
-            word-wrap: break-word;
-            margin-bottom: 20px;
             background-color: #f4f4f4;
             padding: 15px;
             border-radius: 5px;
             font-size: 16px;
+            word-wrap: break-word;
+            margin: 20px 0;
         }
-        .security-info {
-            margin-top: 20px;
+        .instructions {
             font-size: 16px;
-            color: #FF5722;
-            font-weight: bold;
+            margin-top: 20px;
         }
         .logo {
             width: 200px;
             margin-bottom: 20px;
+        }
+        .security-message {
+            font-size: 16px;
+            color: #FF5722;
+            margin-top: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -56,9 +67,45 @@
         <!-- Título -->
         <h2>Pagamento via PIX</h2>
         
-        <!-- Instruções para copiar a chave -->
-        <p>Para realizar o pagamento, copie a chave PIX abaixo e envie para o seu app bancário:</p>
+        <!-- Instruções -->
+        <p class="instructions">
+            Para efetuar o pagamento, copie a chave PIX abaixo e cole no seu aplicativo bancário.
+            <br><br>
+            Caso não saiba como realizar o pagamento, siga as instruções:
+            <ol>
+                <li>Abra o seu aplicativo bancário.</li>
+                <li>Escolha a opção "Pagar com PIX".</li>
+                <li>Selecione "Copiar e colar chave" ou "Chave Aleatória" dependendo do seu app.</li>
+                <li>Cole a chave PIX abaixo.</li>
+                <li>Finalize a transação.</li>
+            </ol>
+        </p>
 
         <!-- Chave PIX -->
-        <div clas
+        <div class="pix-key" id="pixKey">
+            00020126580014br.gov.bcb.pix013632594ce7-4e02-4031-bb80-103603a651825204000053039865802BR5917S PAGAMENTOS LTDA6014BELO HORIZONTE622905256543126f77094c2a8e11f2f4a63046361
+        </div>
 
+        <!-- Botão de copiar chave -->
+        <button class="copy-button" onclick="copyToClipboard()">Copiar chave PIX</button>
+
+        <!-- Mensagem de segurança -->
+        <div class="security-message">
+            Se o seu pedido não cair em até 5 minutos, entre em contato e devolvemos o seu valor!
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            var pixKey = document.getElementById('pixKey');
+            var range = document.createRange();
+            range.selectNode(pixKey);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            alert('Chave PIX copiada para a área de transferência!');
+        }
+    </script>
+
+</body>
+</html>
