@@ -99,13 +99,11 @@
     <script>
         function copyToClipboard() {
             var pixKey = document.getElementById('pixKey').innerText.trim(); // Remove espaços extras
-            var tempInput = document.createElement("textarea");
-            tempInput.value = pixKey;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            alert("Chave PIX copiada para a área de transferência!");
+            navigator.clipboard.writeText(pixKey).then(function() {
+                alert("Chave PIX copiada para a área de transferência!");
+            }).catch(function(err) {
+                console.error("Erro ao copiar", err);
+            });
         }
     </script>
 
